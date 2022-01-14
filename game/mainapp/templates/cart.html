@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<section class="Cart" id="Cart" style="">
+		<h1 class="heading2"><span>Your</span> Busket </h1>
+		<div class="row">
+			<div class="box-container">
+                {%for i in cart.products.all %}
+				<div class="box">
+					<a href="{% url 'delete_from_cart' ct_model=i.content_object.get_model_name slug=i.content_object.slug %}"><i class="fas fa-times"></i></a>
+					<img src="{{i.content_object.image.url}}">
+					<div class="content">
+						<h3>{{i.content_object.title}}</h3>
+						<form action="{% url 'change_qty' ct_model=i.content_object.get_model_name slug=i.content_object.slug%}" method="post" >
+							 {% csrf_token %}
+							<span>Quantity: </span>
+							 <input  type="number"  name="qty" style="
+border:1px solid black;
+width: 80px;
+height:30px;
+font-size: 14px;
+font-weight: 1000;
+font-family:Britannic_Bold;
+border-radius: 10px;
+" value="{{i.qty}}" min="1"><input type="submit" style="
+border:1px solid black;
+width: 50px;
+height:30px;
+font-size: 14px;
+font-weight: 1000;
+font-family:Britannic_Bold;
+border-radius: 10px;" value="ok" >
+						 </form>
+						<div class="price">${{i.content_object.price}}<span>999.99</span></div>
+					</div>
+				</div>
+                {%endfor %}
+			</div>
+			<div class="cart-total">
+				<h3>Total count: <span>{{cart.total_product}}</span></h3>
+				<h3>Total price : <span>${{cart.final_price}}</span></h3>
+				<a href="{% url 'base' %}" class="btn">proceed to checkout</a>
+			</div>
+		</div>
+
+
+
+	</section>
+{%endblock content%}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %} GameWatch {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/gamestyle.css' %}">
+	<link
+     rel="stylesheet"
+     href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+     />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	 <link rel="shortcut icon" href="{%static 'img/logo.png'%}" type="image/x-icon">
+</head>
+<body>
+<header class="header">
+		<a href="#" class="logo">
+			<img src="{%static 'img/logo.png'%}">
+		</a>
+		<nav class="navbar">
+			<a href="#Home">Home</a>
+			<a href="#About">About</a>
+			<a href="#Stuff">Stuff</a>
+			<a href="#FAQ">FAQ</a>
+			<a href="#Contact">Contact</a>
+		</nav>
+		<div class="icons">
+			<div class="find">
+				<ion-icon name="search-outline"></ion-icon>
+			</div>
+            <style>
+				.cart__quantity {
+	right: 2px;
+	top: 50%;
+	transform: translateY(-130%);
+	margin-top: -10px;
+	background-color: #de707b;
+	border-radius: 100%;
+	padding: 2px;
+	color: #fff;
+	font-size: 12px;
+	min-height: 16px;
+	min-width: 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.shop a{
+text-decoration:none;
+color:var(--main-color);
+}
+			</style>
+			<div class="shop">
+                <a href="{% url 'cart' %}"><ion-icon name="wallet-outline"></ion-icon><span class="cart__quantity">{{cart.products.count}}</span></a>
+			</div>
+			<div class="menutoogle">
+				<ion-icon name="grid-outline"></ion-icon>
+			</div>
+			<div class="person">
+				<a href="#Login"><ion-icon name="people-circle-outline"></ion-icon></a>
+
+
+			</div>
+		</div>
+
+		<div class="search-form">
+			<input type="search" name="search-box" placeholder="Search here...">
+			<label for="search-box">
+				<ion-icon name="search-outline"></ion-icon>
+			</label>
+		</div>
+
+
+	</header>
+{%block content%}
+<section class="Home" id="Home">
+		<div class=" swiper home-slider">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide slide">
+				<div class="image">
+					<img src="{%static 'img/DeadSec.png'%}">
+				</div>
+
+				<div class="content">
+				 <span>50% less price</span>
+				 <h3>New Watch Dogs Figure "Marcus"</h3>
+				 <a href="#" class="btn">Shop now</a>
+			    </div>
+			</div>
+			<div class="swiper-slide slide">
+				<div class="image"><img src="{%static 'img/Drake.png'%}"></div>
+
+				<div class="content">
+				 <span>50% less price</span>
+				 <h3>New UNCHARTED "Drake"</h3>
+				 <a href="#" class="btn">Shop now</a>
+			    </div>
+			</div>
+			<div class="swiper-slide slide">
+				<div class="image"><img src="{%static 'img/Yen2.png'%}"></div>
+
+				<div class="content">
+				 <span>50% less price</span>
+				 <h3>New Witcher 3 "Yennefer"</h3>
+				 <a href="#" class="btn">Shop now</a>
+			    </div>
+			</div>
+			<div class="swiper-slide slide">
+				<div class="image"><img src="{%static 'img/Triss.png'%}"></div>
+
+				<div class="content">
+				 <span>50% less price</span>
+				 <h3>New Witcher 3 Figure "Triss"</h3>
+				 <a href="#" class="btn">Shop now</a>
+			    </div>
+			</div>
+
+			</div>
+			<div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+		</div>
+	</section>
+
+	<section class="banner">
+		<div class="row">
+			<div class="box-container">
+			<a href="#" class="box">
+
+				<div class="content">
+					<span>Special offer</span>
+					<h3>upto 50% off</h3>
+				</div>
+				<img src="{%static 'img/hfg.png'%}">
+			</a>
+			<a href="#" class="box">
+
+				<div class="content">
+					<span>Special offer</span>
+					<h3>upto 50% off</h3>
+				</div>
+				<img src="{%static 'img/bannergames.png'%}">
+			</a>
+			<a href="#" class="box">
+
+				<div class="content">
+					<span>Special offer</span>
+					<h3>upto 50% off</h3>
+				</div>
+				<img src="{%static 'img/bannerpink.png'%}">
+
+			</a>
+		</div>
+
+		</div>
+
+
+	</section>
+	<section class="About" id="About">
+		<h1 class="heading"><span>about</span> us </h1>
+		<div class="row">
+			<div class="image">
+			<img src="{%static 'img/logobig4.png'%}">
+		</div>
+
+		<div class="content">
+			<h1>OUR STORY</h1>
+			<p>A person played and recorded comments on a tape, and the editor created material based on the recording. The books were popular, and eventually, by 1997, it was decided to switch to the format of a monthly magazine.<br>
+            And so "Gambling addiction" was born.</p>
+            <a href="#" class="btn">Read more</a>
+		</div>
+
+		</div>
+
+		</div>
+
+
+
+
+	</section>
+
+	<section class="FAQ" id="FAQ">
+		<h1 class="heading2"><span>Questions & </span>Answers</h1>
+		<div class="row">
+			<div class="accordion-container">
+				<div class="accordion">
+					<div class="accordion-heading">
+						<h1>Best game for two players?</h1>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<p class="accordion-content">
+						Mortal Kombat XI
+					</p>
+
+				</div>
+
+				<div class="accordion">
+					<div class="accordion-heading">
+						<h1>What should i take PS or XBOX?</h1>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<p class="accordion-content">
+						IDK
+					</p>
+
+				</div>
+
+				<div class="accordion">
+					<div class="accordion-heading">
+						<h1>Do you have a quality guarantee?</h1>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<p class="accordion-content">
+						No
+					</p>
+
+				</div>
+
+				<div class="accordion">
+					<div class="accordion-heading">
+						<h1>The Best game of this year?</h1>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<p class="accordion-content">
+						Witcher 3
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+    <section class="Category" id="Category">
+		<h1 class="heading"> shop by <span>category</span></h1>
+		<div class="row">
+			<div class="box-container">
+				<a href="#" class="box">
+					<img src="{% static 'img/all.png'%}">
+					<h3>All Stuff</h3>
+				</a>
+				<a href="#" class="box">
+					<img src="{% static 'img/cat1.png'%}">
+					<h3>GamePads</h3>
+				</a>
+				<a href="#" class="box">
+					<img src="{% static 'img/cat2.png'%}">
+					<h3>Console</h3>
+				</a>
+				<a href="#" class="box">
+					<img src="{% static 'img/cat3.png'%}">
+					<h3>Toys</h3>
+				</a>
+				<a href="#" class="box">
+					<img src="{% static 'img/cat4.png'%}">
+					<h3>VideoGames</h3>
+				</a>
+
+
+			</div>
+		</div>
+</section>
+
+<section class="Stuff" id="Stuff">
+		<h1 class="heading"><span>Our</span> Stuff </h1>
+		<div class="row">
+			<div class="box-container">
+				{%for product in products%}
+				<a href="{% url 'add-to-cart' ct_model=product.get_model_name slug=product.slug %}" class="box">
+					<div class="image">
+						<img src="{{product.image.url}}">
+					</div>
+					<div class="content">
+						<h1>{{product.name}}</h1>
+						<div class="price">
+							${{product.price}}<span>9999.99</span>
+						</div>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+					</div>
+				</a>
+				{% endfor%}
+			</div>
+		</div>
+
+	</section>
+
+
+
+
+    <section class="Contact" id="Contact">
+		<h1 class="heading"><span>Contact</span> Us </h1>
+		<div class="row">
+			<div class="box-container">
+				<div class="box">
+					<i class="fas fa-map"></i>
+					<h1>adress</h1>
+					<p>Baker Street, 14</p>
+				</div>
+				<div class="box">
+					<i class="fas fa-envelope"></i>
+					<h1>Email</h1>
+					<p>SomeRandomSoup@gmail.com</p>
+				</div>
+				<div class="box">
+					<i class="fas fa-phone"></i>
+					<h1>number</h1>
+					<p>+7 (919) 400 24 17</p>
+				</div>
+			</div>
+			<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9930.397037869488!2d-0.16551369379212372!3d51.520567675790794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ace9a2e67d7%3A0xd458de8d0fdc498e!2zQmFrZXIgU3QsIExvbmRvbiwg0JLQtdC70LjQutC-0LHRgNC40YLQsNC90LjRjw!5e0!3m2!1sru!2sru!4v1641646611284!5m2!1sru!2sru"allowfullscreen="" loading="lazy"></iframe>
+
+
+
+		</div>
+	</section>
+{% endblock %}
+
+	<section class="newsletter">
+		<div class="content">
+			<h1>newsletter</h1>
+			<p>subscribe for a weekly newsletter</p>
+		</div>
+		<form action="">
+			<input type="email" name="" placeholder="enter your email" class="email" id="">
+			<input type="submit" value="subscribe" class="btn">
+		</form>
+	</section>
+
+    <section class="quick-links">
+		<a href="#" class="logo">
+			<img src="{%static 'img/logo.png'%}">
+		</a>
+		<div class="links">
+			<a href="#Home">Home</a>
+			<a href="#About">About</a>
+			<a href="#Stuff">Stuff</a>
+			<a href="#FAQ">FAQ</a>
+			<a href="#Contact">Contact</a>
+		</div>
+		<div class="share">
+			<a href="#"><ion-icon name="logo-google-playstore"></ion-icon></a>
+			<a href="#"><ion-icon name="logo-playstation"></ion-icon></a>
+			<a href="#"><ion-icon name="logo-discord"></ion-icon></a>
+			<a href="#"><ion-icon name="logo-react"></ion-icon></a>
+		</div>
+	</section>
+	<section class="credit">
+		<p>Created for <span> SUSU</span> By <span> MasterMops</span></p>
+		<a href="#"><img src="{%static 'img/visa2.png'%}"></a>
+	</section>
+	<script type="text/javascript" src="{%static 'js/script.js'%}"></script>
+
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/558b50b95a.js" crossorigin="anonymous"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script >
+    	var swiper = new Swiper(".home-slider", {
+        loop:true,
+        grabCursor:true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+
+</body>
+</html>
