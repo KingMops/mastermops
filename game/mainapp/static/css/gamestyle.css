@@ -14,11 +14,7 @@
 	font-style: normal;
 }
 
-@mixin grid($val){
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax($val,1fr));
-	gap:2rem;
-}
+
 :root{
 	--border:.1rem solid rgba(255,255,255,.3);
 	--black:black;
